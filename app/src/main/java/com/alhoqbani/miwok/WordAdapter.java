@@ -1,6 +1,6 @@
 package com.alhoqbani.miwok;
 
-import android.content.Context;
+import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -9,13 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
-
-    public WordAdapter(@NonNull Context context, int resource, @NonNull List<Word> objects) {
-        super(context, resource, objects);
+    public WordAdapter(Activity context, ArrayList<Word> words) {
+        super(context, 0, words);
     }
 
     @NonNull

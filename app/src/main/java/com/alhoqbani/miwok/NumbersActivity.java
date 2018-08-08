@@ -3,7 +3,6 @@ package com.alhoqbani.miwok;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -32,7 +31,7 @@ public class NumbersActivity extends AppCompatActivity {
         Log.v("NumbersActivity", "Word at index 5: " + words.get(5));
 
         // Using GridView to display list of words.
-        WordAdapter itemsAdapter = new WordAdapter(this, R.layout.list_item, words);
+        WordAdapter itemsAdapter = new WordAdapter(this, words);
 
         ListView listView = findViewById(R.id.list);
 

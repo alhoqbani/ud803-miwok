@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ArrayAdapter;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -33,12 +34,12 @@ public class NumbersActivity extends AppCompatActivity {
         Log.v("NumbersActivity", "Word at index 0: " + words.get(0));
         Log.v("NumbersActivity", "Word at index 5: " + words.get(5));
 
-        // Using ListView to display list of words.
+        // Using GridView to display list of words.
         ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, words);
 
-        ListView listView = findViewById(R.id.list);
+        GridView gridView = findViewById(R.id.gridView);
 
-        listView.setAdapter(itemsAdapter);
+        gridView.setAdapter(itemsAdapter);
 
     }
 }

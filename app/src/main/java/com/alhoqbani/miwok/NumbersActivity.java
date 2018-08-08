@@ -2,6 +2,7 @@ package com.alhoqbani.miwok;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 
 public class NumbersActivity extends AppCompatActivity {
 
@@ -21,6 +22,9 @@ public class NumbersActivity extends AppCompatActivity {
         words[7] = "eight";
         words[8] = "nine";
         words[9] = "ten";
+
+        Log.v("NumbersActivity", "Word at index 0: " + words[0]);
+        Log.v("NumbersActivity", "Word at index 5: " + words[5]);
 
     }
 }

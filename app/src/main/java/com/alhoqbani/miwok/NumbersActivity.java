@@ -31,14 +31,13 @@ public class NumbersActivity extends AppCompatActivity {
         Log.v("NumbersActivity", "Word at index 0: " + words.get(0));
         Log.v("NumbersActivity", "Word at index 5: " + words.get(5));
 
-        // Using while loop to add list of words to the rootView
+        // Using for loop to add list of words to the rootView
         LinearLayout rootView = findViewById(R.id.rootView);
-        int count = 0;
-        while (count < words.size()) {
+
+        for (int index = 0; index < words.size(); index++) {
             TextView textView = new TextView(this);
-            textView.setText(words.get(count));
+            textView.setText(words.get(index));
             rootView.addView(textView);
-            count++;
         }
 
     }

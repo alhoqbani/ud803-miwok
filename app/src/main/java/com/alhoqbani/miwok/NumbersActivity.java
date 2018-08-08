@@ -4,10 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ArrayAdapter;
-import android.widget.GridView;
-import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -37,9 +34,9 @@ public class NumbersActivity extends AppCompatActivity {
         // Using GridView to display list of words.
         ArrayAdapter<String> itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, words);
 
-        GridView gridView = findViewById(R.id.gridView);
+        ListView listView = findViewById(R.id.list);
 
-        gridView.setAdapter(itemsAdapter);
+        listView.setAdapter(itemsAdapter);
 
     }
 }

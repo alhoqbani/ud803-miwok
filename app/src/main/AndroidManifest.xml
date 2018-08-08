@@ -19,7 +19,9 @@
         <activity
             android:name=".NumbersActivity"
             android:label="@string/category_numbers" />
-        <activity android:name=".FamilyActivity" />
+        <activity
+            android:name=".FamilyActivity"
+            android:label="@string/category_family" />
         <activity android:name=".ColorsActivity" />
         <activity android:name=".PhrasesActivity"></activity>
     </application>

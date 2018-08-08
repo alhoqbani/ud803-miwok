@@ -17,6 +17,27 @@ public class MainActivity extends AppCompatActivity {
         FamilyClickListener familyClickListener = new FamilyClickListener();
         TextView family = findViewById(R.id.family);
         family.setOnClickListener(familyClickListener);
+
+        // Open Activity Method 3: Inline OnClickListener class
+        TextView colors = findViewById(R.id.colors);
+        colors.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ColorsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Transition to PhrasesActivity
+        TextView phrases = findViewById(R.id.phrases);
+        phrases.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PhrasesActivity.class);
+                startActivity(intent);
+            }
+        });
+        
     }
 
     /**

@@ -26,7 +26,6 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(new Word("nine", "wo’e"));
         words.add(new Word("ten", "na’aacha"));
 
-        // Using GridView to display list of words.
         WordAdapter itemsAdapter = new WordAdapter(this, words);
 
         ListView listView = findViewById(R.id.list);

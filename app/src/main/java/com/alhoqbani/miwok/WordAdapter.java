@@ -3,6 +3,7 @@ package com.alhoqbani.miwok;
 import android.app.Activity;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +15,11 @@ import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter<Word> {
 
-    public WordAdapter(Activity context, ArrayList<Word> words) {
+    private int mbackgroundColor;
+
+    public WordAdapter(Activity context, ArrayList<Word> words, int backgroundColor) {
         super(context, 0, words);
+        mbackgroundColor = backgroundColor;
     }
 
     @NonNull
@@ -27,6 +31,11 @@ public class WordAdapter extends ArrayAdapter<Word> {
             listItemView = LayoutInflater.from(getContext()).inflate(
                     R.layout.list_item, parent, false);
         }
+
+        // Change the background color to match the color for the category.
+        int color = ContextCompat.getColor(getContext(), mbackgroundColor);
+        View textContainer = listItemView.findViewById(R.id.text_container);
+        textContainer.setBackgroundColor(color);
 
         // Get the {@link Word} object located at this position in the list
         Word currentWord = getItem(position);

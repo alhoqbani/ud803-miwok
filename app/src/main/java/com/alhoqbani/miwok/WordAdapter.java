@@ -69,15 +69,15 @@ public class WordAdapter extends ArrayAdapter<Word> {
             iconView.setVisibility(View.GONE);
         }
 
-        // Set play audio file click listener.
-        textContainer.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                mediaPlayer = MediaPlayer.create(textContainer.getContext(), currentWord.getmAudioResourceId());
-                mediaPlayer.start();
-            }
-        });
+//        // Set play audio file click listener.
+//        textContainer.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//            public void onClick(View view) {
+//                mediaPlayer = MediaPlayer.create(textContainer.getContext(), currentWord.getmAudioResourceId());
+//                mediaPlayer.start();
+//            }
+//        });
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView

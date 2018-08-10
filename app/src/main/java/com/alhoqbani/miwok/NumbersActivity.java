@@ -19,7 +19,7 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
-        ArrayList<Word> words = new ArrayList<>();
+         final ArrayList<Word> words = new ArrayList<>();
 
         words.add(new Word("one", "lutti", R.drawable.number_one, R.raw.number_one));
         words.add(new Word("two", "otiiko", R.drawable.number_two, R.raw.number_two));
@@ -40,8 +40,7 @@ public class NumbersActivity extends AppCompatActivity {
 
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(NumbersActivity.this, "You Clicked me", Toast.LENGTH_SHORT).show();
-                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, R.raw.color_black);
+                mMediaPlayer = MediaPlayer.create(NumbersActivity.this, words.get(i).getmAudioResourceId());
                 mMediaPlayer.start();
             }
         });

@@ -1,6 +1,7 @@
 package com.alhoqbani.miwok;
 
 import android.app.Activity;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 public class WordAdapter extends ArrayAdapter<Word> {
 
     private int mbackgroundColor;
+    private MediaPlayer mediaPlayer;
 
     public WordAdapter(Activity context, ArrayList<Word> words, int backgroundColor) {
         super(context, 0, words);
@@ -34,11 +36,11 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
         // Change the background color to match the color for the category.
         int color = ContextCompat.getColor(getContext(), mbackgroundColor);
-        View textContainer = listItemView.findViewById(R.id.text_container);
+        final View textContainer = listItemView.findViewById(R.id.text_container);
         textContainer.setBackgroundColor(color);
 
         // Get the {@link Word} object located at this position in the list
-        Word currentWord = getItem(position);
+        final Word currentWord = getItem(position);
 
         // Find the TextView in the list_item.xml layout with the ID version_name
         TextView nameTextView = listItemView.findViewById(R.id.miwok_text_view);
@@ -66,6 +68,16 @@ public class WordAdapter extends ArrayAdapter<Word> {
             // Otherwise hide the ImageView (set visibility to GONE)
             iconView.setVisibility(View.GONE);
         }
+
+        // Set play audio file click listener.
+        textContainer.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                mediaPlayer = MediaPlayer.create(textContainer.getContext(), currentWord.getmAudioResourceId());
+                mediaPlayer.start();
+            }
+        });
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView
